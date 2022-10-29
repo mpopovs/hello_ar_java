@@ -400,23 +400,12 @@ public class HelloArActivity extends AppCompatActivity implements SampleRender.R
       virtualObjectAlbedoTexture =
           Texture.createFromAsset(
               render,
-              "models/pawn_albedo.png",
+              "models/newt.png",
               Texture.WrapMode.CLAMP_TO_EDGE,
               Texture.ColorFormat.SRGB);
-      virtualObjectAlbedoInstantPlacementTexture =
-          Texture.createFromAsset(
-              render,
-              "models/pawn_albedo_instant_placement.png",
-              Texture.WrapMode.CLAMP_TO_EDGE,
-              Texture.ColorFormat.SRGB);
-      Texture virtualObjectPbrTexture =
-          Texture.createFromAsset(
-              render,
-              "models/pawn_roughness_metallic_ao.png",
-              Texture.WrapMode.CLAMP_TO_EDGE,
-              Texture.ColorFormat.LINEAR);
 
-      virtualObjectMesh = Mesh.createFromAsset(render, "models/pawn.obj");
+
+      virtualObjectMesh = Mesh.createFromAsset(render, "models/myt.obj");
       virtualObjectShader =
           Shader.createFromAssets(
                   render,
@@ -430,7 +419,7 @@ public class HelloArActivity extends AppCompatActivity implements SampleRender.R
                     }
                   })
               .setTexture("u_AlbedoTexture", virtualObjectAlbedoTexture)
-              .setTexture("u_RoughnessMetallicAmbientOcclusionTexture", virtualObjectPbrTexture)
+              
               .setTexture("u_Cubemap", cubemapFilter.getFilteredCubemapTexture())
               .setTexture("u_DfgTexture", dfgTexture);
     } catch (IOException e) {
